@@ -1,11 +1,13 @@
-﻿namespace Rater ;
+﻿using Rater.Pages;
+
+namespace Rater ;
 
     public partial class App : Application
     {
-        public App()
+        public App(LoginPage loginPage)
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = loginPage;
         }
     }

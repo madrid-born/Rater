@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rater.Pages.LoginPage"
+             BackgroundColor ="White">
+    <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30,0" 
+            VerticalOptions="Center">
+
+        <Image
+            Source="dotnet_bot.svg"
+            HeightRequest="150"
+            WidthRequest="150"/>
+
+        <VerticalStackLayout Spacing="5">
+            <Label 
+                Text="Welcome!" 
+                FontSize="28"
+                TextColor="Gray"
+                HorizontalTextAlignment="Center" />
+            <Label 
+                Text="Login to your account"
+                FontSize="18"
+                TextColor="Gray"
+                HorizontalTextAlignment="Center" />
+        </VerticalStackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame 
+                ZIndex="1"
+                HasShadow="True"
+                BorderColor="White"
+                HeightRequest="56"
+                WidthRequest="56"
+                CornerRadius="28">
+                <Image 
+                    Source="user.png"
+                    HeightRequest="20"
+                    WidthRequest="20"/>
+            </Frame>
+            <Frame 
+                HeightRequest="45"
+                Margin="-20,0,0,0"
+                Padding="0"
+                HasShadow="True"
+                BorderColor="White"
+                HorizontalOptions="FillAndExpand">
+                <Entry 
+                    x:Name="UsernameEntry"
+                    Margin="20, 0,0,0"
+                    Placeholder="Username"
+                    TextColor="Black"
+                    Keyboard="Email"/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Frame 
+                ZIndex="1"
+                HasShadow="True"
+                BorderColor="White"
+                HeightRequest="56"
+                WidthRequest="56"
+                CornerRadius="28">
+                <Image 
+                    Source="lock.png"
+                    HeightRequest="20"
+                    WidthRequest="20" />
+            </Frame>
+            <Frame 
+                HeightRequest="45"
+                Margin="-20,0,0,0"
+                Padding="0"
+                HasShadow="True"
+                BorderColor="White"
+                HorizontalOptions="FillAndExpand">
+                <Entry
+                    x:Name="PasswordEntry"
+                    Margin="20, 0,0,0"
+                    Placeholder="Password"
+                    TextColor="Black"
+                    IsPassword="True"/>
+            </Frame>
+        </StackLayout>
+
+        <Button 
+            FontSize="16"
+            BackgroundColor="#50b3f2"
+            TextColor="White"
+            Text="Sign In"
+            WidthRequest="100"
+            CornerRadius="20"
+            HorizontalOptions="Center"
+            Clicked="LoginButton_Clicked" />
+
+        <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="Center">
+            <Label 
+                Text="Don't have account?"
+                TextColor="Gray"
+                HorizontalOptions="End"
+                Margin="0,12,0,0"/>
+            <Button
+                Text="Sign Up here"
+                WidthRequest="80"
+                VerticalOptions="Start" 
+                BackgroundColor="Transparent"
+                TextColor="#50b3f2"
+                HorizontalOptions="Start" 
+                Margin="-15,0,0,0" 
+                Clicked="RegisterButton_Clicked"/>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

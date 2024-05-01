@@ -1,0 +1,64 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Rater.Methods;
+
+namespace Rater.Pages ;
+
+    public partial class RegisterPage : ContentPage
+    {
+        public RegisterPage()
+        {
+            InitializeComponent();
+        }
+
+        private void LoginButton_Clicked(object sender, EventArgs e)
+        {
+            // Application.Current.MainPage = new LoginPage();
+        }
+
+        private async void RegisterButton_Clicked(object sender, EventArgs e)
+        {
+            // var username = UsernameEntry.Text;
+            // var password1 = PasswordEntry1.Text;
+            // var password2 = PasswordEntry2.Text;
+            //
+            // if (string.IsNullOrEmpty(username))
+            // {
+            //     await DisplayAlert("Error", "Username field can't be empty", "OK");
+            //     return;
+            // }
+            //
+            // if (string.IsNullOrEmpty(password1))
+            // {
+            //     await DisplayAlert("Error", "Password field can't be empty", "OK");
+            //     return;
+            // }
+            //
+            // if (string.IsNullOrEmpty(password2))
+            // {
+            //     await DisplayAlert("Error", "Please fill both the Password fields", "OK");
+            //     return;
+            // }
+            //
+            // if (password1 != password2)
+            // {
+            //     await DisplayAlert("Error", "Passwords doesn't match", "OK");
+            //     return;
+            // }
+            //
+            // if (Functions.UsernamesInDatabase().Contains(username))
+            // {
+            //     await DisplayAlert("Error", "This Username had already been taken", "OK");
+            //     return;
+            // }
+            //
+            // var person = new Person(username, password1);
+            // Functions.AddUserToDatabase(person);
+            // Functions.AuthorizeUser(person);
+            //
+            // Application.Current.MainPage = new NavigationPage(new HomeTabbedPage());
+        }
+    }

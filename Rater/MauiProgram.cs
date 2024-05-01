@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using Rater.Methods;
+using Rater.Pages;
 
 namespace Rater ;
 
@@ -14,6 +16,8 @@ namespace Rater ;
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+            builder.Services.AddSingleton<DatabaseContext>();
+            builder.Services.AddTransient<LoginPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();
