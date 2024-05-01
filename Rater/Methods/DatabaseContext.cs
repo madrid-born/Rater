@@ -80,6 +80,7 @@ namespace Rater.Methods ;
         public List<Topic> GetTopicsForUser()
         {
             // TODO : make this function later
-            throw new NotImplementedException();
+            var result = new List<Topic>();
+            return result;
         }
     }
