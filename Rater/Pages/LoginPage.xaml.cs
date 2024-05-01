@@ -25,7 +25,7 @@ namespace Rater.Pages ;
         private async void LoginButton_Clicked(object sender, EventArgs e)
         {
             var username = UsernameEntry.Text;
-            var password1 = PasswordEntry.Text;
+            var password = PasswordEntry.Text;
             
             if (string.IsNullOrEmpty(username))
             {
@@ -33,13 +33,13 @@ namespace Rater.Pages ;
                 return;
             }
             
-            if (string.IsNullOrEmpty(password1))
+            if (string.IsNullOrEmpty(password))
             {
                 await DisplayAlert("Error", "Password field can't be empty", "OK");
                 return;
             }
 
-            var user = new User{Name = username, Password = password1};
+            var user = new User{Name = username, Password = password};
             
             if (!_databaseContext.CheckUserAuthentication(user))
             {

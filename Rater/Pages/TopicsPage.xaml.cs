@@ -18,7 +18,6 @@ namespace Rater.Pages ;
             InitializeComponent();
             _databaseContext = dbContext;
             _topicsList = _databaseContext.GetTopicsForUser();
-            // _topicsList = Functions.GetUserTopics();
         }
         
         // protected override void OnAppearing()

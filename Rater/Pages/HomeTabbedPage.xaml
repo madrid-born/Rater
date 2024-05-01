@@ -11,6 +11,6 @@
             BarBackgroundColor="LightGray"
             BackgroundColor ="White">
     
-    <mainPages:TopicsPage Title="TopicsPage" IconImageSource="NothingYet.svg" />
+    <!-- <mainPages:TopicsPage Title="TopicsPage" IconImageSource="NothingYet.svg" /> -->
     <mainPages:ProfilePage Title="ProfilePage" IconImageSource="NothingYet.svg"/>
 </TabbedPage>

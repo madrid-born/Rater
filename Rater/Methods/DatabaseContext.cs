@@ -68,13 +68,13 @@ namespace Rater.Methods ;
         public bool CheckUserAuthentication(User user)
         {
             // TODO : make this function later
-            throw new NotImplementedException();
+            return true;
         }
 
         public bool CheckUsernameInDatabase(string username)
         {
             // TODO : make this function later
-            throw new NotImplementedException();
+            return true;
         }
 
         public List<Topic> GetTopicsForUser()

@@ -11,7 +11,7 @@
 
         <VerticalStackLayout Spacing="5">
             <Label 
-                Text="Welcome!" 
+                Text="Welcome fella!" 
                 FontSize="28"
                 TextColor="Gray"
                 HorizontalTextAlignment="Center" />

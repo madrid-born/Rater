@@ -10,11 +10,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e629fd5-14b4-4829-bc44-9c9b517f8722" name="Changes" comment="First Commit">
+    <list default="true" id="2e629fd5-14b4-4829-bc44-9c9b517f8722" name="Changes" comment="changes Login and Register">
+      <change afterPath="$PROJECT_DIR$/Rater/Migrations/20240501202240_removeEmail.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rater/Migrations/20240501202240_removeEmail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Rater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rater/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rater/Methods/DatabaseContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Methods/DatabaseContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rater/Methods/Functions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Methods/Functions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rater/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Migrations/DatabaseContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Migrations/DatabaseContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Pages/HomeTabbedPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/HomeTabbedPage.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rater/Pages/LoginPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/LoginPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Pages/RegisterPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/RegisterPage.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rater/Pages/RegisterPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/RegisterPage.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rater/Pages/TopicsPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/TopicsPage.xaml.cs" afterDir="false" />
     </list>
@@ -42,6 +46,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -107,7 +112,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1714588429600</updated>
-      <workItem from="1714588430986" duration="6166000" />
+      <workItem from="1714588430986" duration="8267000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -125,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714592861818</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="changes Login and Register">
+      <option name="closed" value="true" />
+      <created>1714594743076</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714594743076</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,8 +146,10 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="First Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
+    <MESSAGE value="changes Login and Register" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes Login and Register" />
   </component>
 </project>
