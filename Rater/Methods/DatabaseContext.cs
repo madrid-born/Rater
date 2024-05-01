@@ -27,6 +27,8 @@ namespace Rater.Methods ;
                 optionsBuilder.UseSqlServer(connString);
             }
         }
+        
+        //crud
 
         public IEnumerable<User> GetUsers()
         {
@@ -61,4 +63,23 @@ namespace Rater.Methods ;
             SaveChanges();
         }
 
+        //Checks Functions
+
+        public bool CheckUserAuthentication(User user)
+        {
+            // TODO : make this function later
+            throw new NotImplementedException();
+        }
+
+        public bool CheckUsernameInDatabase(string username)
+        {
+            // TODO : make this function later
+            throw new NotImplementedException();
+        }
+
+        public List<Topic> GetTopicsForUser()
+        {
+            // TODO : make this function later
+            throw new NotImplementedException();
+        }
     }

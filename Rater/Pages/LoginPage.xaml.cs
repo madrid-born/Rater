@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Rater.Methods;
+using Rater.Models;
 
 namespace Rater.Pages ;
 
     public partial class LoginPage : ContentPage
     {
-        private DatabaseContext _databaseContext;
+        private readonly DatabaseContext _databaseContext;
         public LoginPage(DatabaseContext databaseContext)
         {
             InitializeComponent();
@@ -18,7 +19,7 @@ namespace Rater.Pages ;
 
         private void RegisterButton_Clicked(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new RegisterPage();
+            Application.Current.MainPage = new RegisterPage(_databaseContext);
         }
 
         private async void LoginButton_Clicked(object sender, EventArgs e)
@@ -38,16 +39,19 @@ namespace Rater.Pages ;
                 return;
             }
 
-            // var person = new Person(username, password1);
-            //
-            // if (!Functions.CheckUSerInDatabase(person))
-            // {
-            //     await DisplayAlert("Error", "This Username had already been taken", "OK");
-            //     return;
-            // }
-            //
-            // Functions.AuthorizeUser(person);
+            var user = new User{Name = username, Password = password1};
             
-            Application.Current.MainPage = new NavigationPage(new TopicsPage());
+            if (!_databaseContext.CheckUserAuthentication(user))
+            {
+                await DisplayAlert("Error", "Username or Password is incorrect", "OK");
+                return;
+            }
+            
+            Functions.AuthorizeUser(user);
+            
+            Application.Current.MainPage = new NavigationPage(new TopicsPage(_databaseContext));
+            
+            // TODO: activate this on release
+            // Application.Current.MainPage = new NavigationPage(new HomeTabbedPage());
         }
     }

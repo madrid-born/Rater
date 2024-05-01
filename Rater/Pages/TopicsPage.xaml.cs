@@ -10,11 +10,14 @@ namespace Rater.Pages ;
 
     public partial class TopicsPage : ContentPage
     {
+        private readonly DatabaseContext _databaseContext;
         private List<Topic> _topicsList ;
         
-        public TopicsPage()
+        public TopicsPage(DatabaseContext dbContext)
         {
             InitializeComponent();
+            _databaseContext = dbContext;
+            _topicsList = _databaseContext.GetTopicsForUser();
             // _topicsList = Functions.GetUserTopics();
         }
         

@@ -11,10 +11,13 @@ namespace Rater.Models ;
         
         [MaxLength(100)]
         public string Name { get; set; }
-        
-        [MaxLength(100)]
-        public string Email { get; set; }
-        
+
         [MaxLength(100)]
         public string Password { get; set; }
+        
+        
+        public string TopicsIdIncludedJson { get; set; }
+        
+        
     }
+    
