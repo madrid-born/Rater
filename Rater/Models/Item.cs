@@ -46,6 +46,4 @@ namespace Rater.Models ;
             ValuesJson = Functions.SerializeValues(values);
             MeanValuesJson = Functions.SerializeMeanValues(meanValues);
         }
-
-
     }

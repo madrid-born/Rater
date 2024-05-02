@@ -20,13 +20,13 @@ namespace Rater.Pages ;
             InitializeComponent();
             _databaseContext = databaseContext;
             _itemId = itemId;
-            _item = _databaseContext.GetItemById(_itemId);
-            _parentTopic = _databaseContext.GetTopicById(_item.ParentId);
         }
         
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            _item = _databaseContext.GetItemById(_itemId);
+            _parentTopic = _databaseContext.GetTopicById(_item.ParentId);
             FillTheFront();
         }
         
@@ -37,11 +37,14 @@ namespace Rater.Pages ;
             sl.Children.Add(CreateHsl("Topic", _parentTopic.Name));
             sl.Children.Add(CreateHsl("Name", _item.Name));
             sl.Children.Add(CreateHsl("Total Mean Value", _item.MeanValue.ToString()));
-            foreach (var person in Functions.DeserializeStringList(_parentTopic.MembersJson))
+            foreach (var person in _parentTopic.Members())
             {
                 sl.Children.Add(CreateHsl(person, Functions.DeserializeMeanValues(_item.MeanValuesJson)[person].ToString()));
             }
-            sl.Children.Add(CreateRateButton());
+            if (Functions.DeserializeMeanValues(_item.MeanValuesJson)[Functions.GetUsername()] == 0)
+            {
+                sl.Children.Add(CreateRateButton());
+            }
             sl.Children.Add(new ScrollView { Orientation = ScrollOrientation.Horizontal, Content = CreateGrid()});
             
             Content = new ScrollView { Content = sl};
@@ -108,7 +111,7 @@ namespace Rater.Pages ;
             };
             addRateButton.Clicked += async (sender, e) =>
             {
-                // await Navigation.PushAsync(new RateItemPage(_item, Functions.GetUsername()));
+                await Navigation.PushAsync(new RateItemPage(_databaseContext, _itemId));
             };
             return addRateButton;
         }
