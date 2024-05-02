@@ -55,25 +55,22 @@ namespace Rater.Pages ;
                     return;
                 }
             
-                // if (!_databaseContext.CheckUsernameInDatabase(username))
-                // {
-                //     await DisplayAlert("Error", "This Username had already been taken", "OK");
-                //     return;
-                // }
+                if (!_databaseContext.CheckUsernameInDatabase(username))
+                {
+                    await DisplayAlert("Error", "This Username had already been taken", "OK");
+                    return;
+                }
                 
                 var user = new User{Name = username, Password = password1};
                 _databaseContext.AddUser(user);
                 Functions.AuthorizeUser(user);
                 await DisplayAlert("s","Registered Successfully", "s");
                 
-                Application.Current.MainPage = new NavigationPage(new LoginPage(_databaseContext));
-                // TODO: activate this on release
-                // Application.Current.MainPage = new NavigationPage(new HomeTabbedPage());
-
+                Application.Current.MainPage = new NavigationPage(new TopicsPage(_databaseContext));
             }
             catch (Exception exception)
             {
-                await DisplayAlert("s", exception.Message, "s");
+                await DisplayAlert("Error", exception.Message, "Done");
             }
         }
     }

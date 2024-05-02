@@ -34,6 +34,11 @@ namespace Rater.Methods ;
         {
             return Users.ToList();
         }
+        
+        public User GetUserById(int userId)
+        {
+            return GetUsers().FirstOrDefault(user => user.Id == userId);
+        }
 
         public void AddUser(User user)
         {
@@ -45,6 +50,11 @@ namespace Rater.Methods ;
         {
             return Topics.ToList();
         }
+        
+        public Topic GetTopicById(int topicId)
+        {
+            return GetTopics().FirstOrDefault(topic => topic.Id == topicId);
+        }
 
         public void AddTopic(Topic topic)
         {
@@ -55,6 +65,11 @@ namespace Rater.Methods ;
         public IEnumerable<Item> GetItems()
         {
             return Items.ToList();
+        }
+
+        public Item GetItemById(int itemId)
+        {
+            return GetItems().FirstOrDefault(item => item.Id == itemId);
         }
 
         public void AddItem(Item item)
@@ -80,7 +95,7 @@ namespace Rater.Methods ;
         public List<Topic> GetTopicsForUser()
         {
             // TODO : make this function later
-            var result = new List<Topic>();
+            var result = GetTopics().ToList();
             return result;
         }
     }

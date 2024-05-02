@@ -10,16 +10,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e629fd5-14b4-4829-bc44-9c9b517f8722" name="Changes" comment="changes Login and Register">
-      <change afterPath="$PROJECT_DIR$/Rater/Migrations/20240501202240_removeEmail.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Rater/Migrations/20240501202240_removeEmail.cs" afterDir="false" />
+    <list default="true" id="2e629fd5-14b4-4829-bc44-9c9b517f8722" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rater/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rater/Methods/DatabaseContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Methods/DatabaseContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rater/Migrations/DatabaseContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Migrations/DatabaseContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rater/Pages/HomeTabbedPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/HomeTabbedPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Models/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Models/Item.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Pages/ItemPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/ItemPage.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rater/Pages/LoginPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/LoginPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rater/Pages/RegisterPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/RegisterPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Pages/MakeNewItemPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/MakeNewItemPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Pages/MakeNewTopicPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/MakeNewTopicPage.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rater/Pages/RegisterPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/RegisterPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Pages/TopicItemsPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/TopicItemsPage.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rater/Pages/TopicsPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/TopicsPage.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +29,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://D:/Coding  Projects/My Projects/C#/MAUI/Rater/Rater/Methods/DatabaseContext.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
     <ignored-facets>
@@ -112,7 +115,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1714588429600</updated>
-      <workItem from="1714588430986" duration="8267000" />
+      <workItem from="1714588430986" duration="13286000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -138,7 +141,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714594743076</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commit">
+      <option name="closed" value="true" />
+      <created>1714596881655</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714596881655</updated>
+    </task>
+    <task id="LOCAL-00005" summary="commit">
+      <option name="closed" value="true" />
+      <created>1714596998694</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714596998694</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +169,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="First Commit" />
     <MESSAGE value="changes Login and Register" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes Login and Register" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>

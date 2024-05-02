@@ -24,34 +24,38 @@ namespace Rater.Pages ;
 
         private async void LoginButton_Clicked(object sender, EventArgs e)
         {
-            var username = UsernameEntry.Text;
-            var password = PasswordEntry.Text;
-            
-            if (string.IsNullOrEmpty(username))
+            try
             {
-                await DisplayAlert("Error", "Username field can't be empty", "OK");
-                return;
-            }
+                var username = UsernameEntry.Text;
+                var password = PasswordEntry.Text;
             
-            if (string.IsNullOrEmpty(password))
-            {
-                await DisplayAlert("Error", "Password field can't be empty", "OK");
-                return;
-            }
+                if (string.IsNullOrEmpty(username))
+                {
+                    await DisplayAlert("Error", "Username field can't be empty", "OK");
+                    return;
+                }
+            
+                if (string.IsNullOrEmpty(password))
+                {
+                    await DisplayAlert("Error", "Password field can't be empty", "OK");
+                    return;
+                }
 
-            var user = new User{Name = username, Password = password};
+                var user = new User{Name = username, Password = password};
             
-            if (!_databaseContext.CheckUserAuthentication(user))
-            {
-                await DisplayAlert("Error", "Username or Password is incorrect", "OK");
-                return;
+                if (!_databaseContext.CheckUserAuthentication(user))
+                {
+                    await DisplayAlert("Error", "Username or Password is incorrect", "OK");
+                    return;
+                }
+            
+                Functions.AuthorizeUser(user);
+            
+                Application.Current.MainPage = new NavigationPage(new TopicsPage(_databaseContext));
             }
-            
-            Functions.AuthorizeUser(user);
-            
-            Application.Current.MainPage = new NavigationPage(new TopicsPage(_databaseContext));
-            
-            // TODO: activate this on release
-            // Application.Current.MainPage = new NavigationPage(new HomeTabbedPage());
+            catch (Exception exception)
+            {
+                await DisplayAlert("Error", exception.Message, "Done");
+            }
         }
     }

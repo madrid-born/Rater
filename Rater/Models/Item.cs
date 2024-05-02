@@ -14,8 +14,8 @@ namespace Rater.Models ;
 
         [MaxLength(100)]
         public string Name { get; set; }
-        
-        public DateTime DateCreated { get; set; }
+
+        public DateTime DateCreated { get; set; } = DateTime.Now;
         
         public double MeanValue { get; set; } = 0;
         
