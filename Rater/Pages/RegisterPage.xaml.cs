@@ -61,7 +61,7 @@ namespace Rater.Pages ;
                     return;
                 }
                 
-                var user = new User{Name = username, Password = password1};
+                var user = new User{Name = username, Password = password1, TopicsIdIncludedJson = Functions.SerializeIntList(new List<int>())};
                 _databaseContext.AddUser(user);
                 Functions.AuthorizeUser(user);
                 await DisplayAlert("s","Registered Successfully", "s");

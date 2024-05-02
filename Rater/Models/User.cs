@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Rater.Methods;
 
 namespace Rater.Models ;
 
@@ -15,9 +16,18 @@ namespace Rater.Models ;
         [MaxLength(100)]
         public string Password { get; set; }
         
-        
         public string TopicsIdIncludedJson { get; set; }
-        
-        
+
+        public IEnumerable<int> TopicsIncluded()
+        {
+            return Functions.DeserializeIntList(TopicsIdIncludedJson);
+        }
+
+        public void AddToTopics(int topicId)
+        {
+            var topics = Functions.DeserializeIntList(TopicsIdIncludedJson);
+            topics.Add(topicId);
+            TopicsIdIncludedJson = Functions.SerializeIntList(topics);
+        }
     }
     

@@ -56,40 +56,52 @@ namespace Rater.Pages ;
             var submitButton = new Button { Text = "Submit"};
             submitButton.Clicked += async (sender, e) =>
             {
-                var name = nameEntry.Text;
-                if (string.IsNullOrEmpty(name))
+                try
                 {
-                    await DisplayAlert("Error", "Name can't be empty", "OK");
-                    return;
-                }
-                var description = "";
-                if (!string.IsNullOrEmpty(descriptionEntry.Text))
-                {
-                    description = descriptionEntry.Text;
-                }
-                var ownersName = Functions.GetUsername();
-                var attributes = new List<string>();
-                foreach (var attribute in _entries.Select(attributeEntry => attributeEntry.Text))
-                {
-                    if (string.IsNullOrEmpty(attribute))
+                    var name = nameEntry.Text;
+                    if (string.IsNullOrEmpty(name))
                     {
-                        await DisplayAlert("Error", "One of attributes is empty", "OK");
-                        _entries = new List<Entry>();
+                        await DisplayAlert("Error", "Name can't be empty", "OK");
                         return;
                     }
-                    attributes.Add(attribute);
+                    var description = "";
+                    if (!string.IsNullOrEmpty(descriptionEntry.Text))
+                    {
+                        description = descriptionEntry.Text;
+                    }
+                    var ownersName = Functions.GetUsername();
+                    var attributes = new List<string>();
+                    foreach (var attribute in _entries.Select(attributeEntry => attributeEntry.Text))
+                    {
+                        if (string.IsNullOrEmpty(attribute))
+                        {
+                            await DisplayAlert("Error", "One of attributes is empty", "OK");
+                            _entries = new List<Entry>();
+                            return;
+                        }
+                        attributes.Add(attribute);
+                    }
+                    if (_entries.Count == 0)
+                    {
+                        await DisplayAlert("Error", "Attributes cant be none", "OK");
+                        return;
+                    }
+                    var topic = new Topic {Name = name, OwnersName = ownersName, Description = description, AttributesJson = Functions.SerializeStringList(attributes), MembersJson = Functions.SerializeStringList(new List<string>{ownersName})};
+                    _databaseContext.AddTopic(topic);
+                    var user = _databaseContext.GetUserByName(ownersName);
+                    var userTopics = Functions.DeserializeIntList(user.TopicsIdIncludedJson);
+                    userTopics.Add(topic.Id);
+                    user.TopicsIdIncludedJson = Functions.SerializeIntList(userTopics); 
+                    _databaseContext.UpdateUser(user);
+                    // MessagingCenter.Send(this, "UpdateTopicsPage", topic);
+                    await Navigation.PopAsync();
+
                 }
-                if (_entries.Count == 0)
+                catch (Exception exception)
                 {
-                    await DisplayAlert("Error", "Attributes cant be none", "OK");
-                    return;
+                    await DisplayAlert("ds", exception.Message, "dsd");
                 }
-                var topic = new Topic {Name = name, OwnersName = ownersName, Description = description, AttributesJson = Functions.SerializeStringList(attributes)};
-                // var topic = new Topic(name, ownersName, description, attributes);
-                _databaseContext.AddTopic(topic);
-                // Functions.AddTopic(topic);
-                MessagingCenter.Send(this, "UpdateTopicsPage", topic);
-                await Navigation.PopAsync();
+                
             };
             sl.Children.Add(submitButton);
             Content = new ScrollView { Content = sl};

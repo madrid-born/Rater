@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Rater.Methods;
 
 namespace Rater.Models ;
 
@@ -17,28 +18,23 @@ namespace Rater.Models ;
         
         [MaxLength(100)]
         public string OwnersName { get; set; }
-        
-        // public List<string> Attributes  { get; set; }
-        // public List<Item> Items  { get; set; }
-        // public List<string> Members  { get; set; }    
-        
+
         public string AttributesJson { get; set; }
-        public string ItemsJson { get; set; }
+        public string ItemsIdJson { get; set; } = Functions.SerializeIntList(new List<int>());
         public string MembersJson { get; set; }
+
+        public List<string> Attributes()
+        {
+            return Functions.DeserializeStringList(AttributesJson);
+        }
         
-        // public Topic(string name, string owner)
-        // {
-        //     Name = name;
-        //     Owner = owner;
-        //     AddMember(Owner);
-        // }
-        //
-        // public Topic(string name, string owner, string description, List<string> attributes)
-        // {
-        //     Name = name;
-        //     Owner = owner;
-        //     Description = description;
-        //     Attributes = attributes;
-        //     AddMember(Owner);
-        // }
+        public List<int> ItemsId()
+        {
+            return Functions.DeserializeIntList(ItemsIdJson);
+        }
+        
+        public List<string> Members()
+        {
+            return Functions.DeserializeStringList(MembersJson);
+        }    
     }

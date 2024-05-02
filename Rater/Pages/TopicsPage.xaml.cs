@@ -17,14 +17,14 @@ namespace Rater.Pages ;
         {
             InitializeComponent();
             _databaseContext = dbContext;
-            _topicsList = _databaseContext.GetTopicsForUser();
         }
         
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            MessagingCenter.Subscribe<MakeNewTopicPage, Topic>(this, "UpdateTopicsPage",
-                (sender, topic) => { _topicsList.Add(topic);});
+            _topicsList = _databaseContext.GetTopicsForUser();
+            // MessagingCenter.Subscribe<MakeNewTopicPage, Topic>(this, "UpdateTopicsPage",
+            //     (sender, topic) => { _topicsList.Add(topic);});
             FillTheFront();
         }
         

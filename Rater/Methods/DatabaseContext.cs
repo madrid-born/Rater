@@ -40,6 +40,17 @@ namespace Rater.Methods ;
             return GetUsers().FirstOrDefault(user => user.Id == userId);
         }
 
+        public User GetUserByName(string username)
+        {
+            return GetUsers().FirstOrDefault(user => user.Name == username);
+        }
+
+        public void UpdateUser(User user)
+        {
+            Users.Update(user);
+            SaveChanges();
+        }
+        
         public void AddUser(User user)
         {
             Users.Add(user);
@@ -56,6 +67,12 @@ namespace Rater.Methods ;
             return GetTopics().FirstOrDefault(topic => topic.Id == topicId);
         }
 
+        public void UpdateTopic(Topic topic)
+        {
+            Topics.Update(topic);
+            SaveChanges();
+        }
+        
         public void AddTopic(Topic topic)
         {
             Topics.Add(topic);
@@ -71,6 +88,12 @@ namespace Rater.Methods ;
         {
             return GetItems().FirstOrDefault(item => item.Id == itemId);
         }
+        
+        public void UpdateItem(Item item)
+        {
+            Items.Update(item);
+            SaveChanges();
+        }
 
         public void AddItem(Item item)
         {
@@ -82,20 +105,42 @@ namespace Rater.Methods ;
 
         public bool CheckUserAuthentication(User user)
         {
-            // TODO : make this function later
-            return true;
+            try
+            {
+                var person = GetUserByName(user.Name);
+                return person.Password == user.Password;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public bool CheckUsernameInDatabase(string username)
         {
-            // TODO : make this function later
-            return true;
+            try
+            {
+                var person = GetUserByName(username);
+                return person.Id <= 0;
+            }
+            catch (Exception e)
+            {
+                return true;
+            }
         }
 
         public List<Topic> GetTopicsForUser()
         {
-            // TODO : make this function later
-            var result = GetTopics().ToList();
-            return result;
+            var user = GetUserByName(Functions.GetUsername());
+            var idList = user.TopicsIncluded();
+            return idList.Select(GetTopicById).ToList();
         }
+
+        public List<Item> GetItemsForTopic(int topicId)
+        {
+            var parentTopic = GetTopicById(topicId);
+            var idList = Functions.DeserializeIntList(parentTopic.ItemsIdJson);
+            return idList.Select(GetItemById).ToList();
+        }
+        
     }

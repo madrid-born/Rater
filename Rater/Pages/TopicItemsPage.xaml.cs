@@ -12,6 +12,7 @@ namespace Rater.Pages ;
     {
         private readonly DatabaseContext _databaseContext;
         private int _topicId;
+        private List<Item> _itemsList;
 
         public TopicItemsPage(DatabaseContext dbContext, int topicId)
         {
@@ -23,6 +24,7 @@ namespace Rater.Pages ;
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            _itemsList = _databaseContext.GetItemsForTopic(_topicId);
             // MessagingCenter.Subscribe<MakeNewItemPage, Item>(this, "UpdateTopicItemsPage", (sender, item) => { _topic.Items.Add(item);});
             FillTheFront();
         }
@@ -34,7 +36,7 @@ namespace Rater.Pages ;
                 Spacing = 5
             };
         
-            foreach (var item in _databaseContext.GetItems())
+            foreach (var item in _itemsList)
             {
                 itemStackLayout.Add(ItemButton(item));
             }

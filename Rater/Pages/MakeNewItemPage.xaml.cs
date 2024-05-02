@@ -11,12 +11,12 @@ namespace Rater.Pages ;
     public partial class MakeNewItemPage : ContentPage
     {
         private DatabaseContext _databaseContext;
-        private int _topicId;
-        public MakeNewItemPage(DatabaseContext databaseContext, int topicId)
+        private int _parentId;
+        public MakeNewItemPage(DatabaseContext databaseContext, int parentId)
         {
             InitializeComponent();
             _databaseContext = databaseContext;
-            _topicId = topicId;
+            _parentId = parentId;
         }
         
         protected override void OnAppearing()
@@ -46,11 +46,15 @@ namespace Rater.Pages ;
                     return;
                 }
                 
-                // var item = new Item(name, _topic);
-                var item = new Item { Name = name, ParentId = _topicId};
-                // Functions.AddItem(item);
+                var item = new Item { Name = name, ParentId = _parentId, DateCreated =  DateTime.Now};
+                var topic = _databaseContext.GetTopicById(_parentId);
+                item.DefaultValues(topic);
                 _databaseContext.AddItem(item);
-                MessagingCenter.Send(this, "UpdateTopicItemsPage", item);
+                var topicItems = Functions.DeserializeIntList(topic.ItemsIdJson);
+                topicItems.Add(item.Id);
+                topic.ItemsIdJson = Functions.SerializeIntList(topicItems); 
+                _databaseContext.UpdateTopic(topic);
+                // MessagingCenter.Send(this, "UpdateTopicItemsPage", item);
                 await Navigation.PopAsync();
             };
             sl.Children.Add(submitButton);

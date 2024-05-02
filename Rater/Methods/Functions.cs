@@ -64,14 +64,14 @@ namespace Rater.Methods ;
             return JsonSerializer.Deserialize<Dictionary<string, double>>(json);
         }
 
-        public static string SerializeMeanValue(Dictionary<string, Dictionary<string, int>> dictionary)
+        public static string SerializeValues(Dictionary<string, Dictionary<int, int>> dictionary)
         {
             return JsonSerializer.Serialize(dictionary);
         }
 
-        public static Dictionary<string, Dictionary<string, int>> DeserializeMeanValue(string json)
+        public static Dictionary<string, Dictionary<int, int>> DeserializeValues(string json)
         {
-            return JsonSerializer.Deserialize<Dictionary<string, Dictionary<string, int>>>(json);
+            return JsonSerializer.Deserialize<Dictionary<string, Dictionary<int, int>>>(json);
         }
         
         public static string SerializeStringList(List<string> list)
@@ -82,5 +82,15 @@ namespace Rater.Methods ;
         public static List<string> DeserializeStringList(string json)
         {
             return JsonSerializer.Deserialize<List<string>>(json);
+        }
+        
+        public static string SerializeIntList(List<int> list)
+        {
+            return JsonSerializer.Serialize(list);
+        }
+
+        public static List<int> DeserializeIntList(string json)
+        {
+            return JsonSerializer.Deserialize<List<int>>(json);
         }
     }

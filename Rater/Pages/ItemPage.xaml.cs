@@ -65,7 +65,7 @@ namespace Rater.Pages ;
         {
             var attributes = Functions.DeserializeStringList(_parentTopic.AttributesJson);
             var members = Functions.DeserializeStringList(_parentTopic.MembersJson);
-            var values = Functions.DeserializeMeanValue(_item.ValuesJson);
+            var values = Functions.DeserializeValues(_item.ValuesJson);
             var table = new Grid 
             {
                 ColumnSpacing = 10
@@ -93,7 +93,7 @@ namespace Rater.Pages ;
                 personColumn.Children.Add(new Label { Text = members[i], HorizontalTextAlignment = TextAlignment.Center });
                 foreach (var attribute in attributes)
                 {
-                    personColumn.Children.Add(new Label { Text = values[members[i]][attribute].ToString(), HorizontalTextAlignment = TextAlignment.Center });
+                    personColumn.Children.Add(new Label { Text = values[members[i]][attributes.IndexOf(attribute)].ToString(), HorizontalTextAlignment = TextAlignment.Center });
                 }
             }
         
