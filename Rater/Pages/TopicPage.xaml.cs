@@ -8,13 +8,13 @@ using Rater.Models;
 
 namespace Rater.Pages ;
 
-    public partial class TopicItemsPage : ContentPage
+    public partial class TopicPage : ContentPage
     {
         private readonly DatabaseContext _databaseContext;
         private int _topicId;
         private List<Item> _itemsList;
 
-        public TopicItemsPage(DatabaseContext dbContext, int topicId)
+        public TopicPage(DatabaseContext dbContext, int topicId)
         {
             InitializeComponent();
             _databaseContext = dbContext;
@@ -25,12 +25,30 @@ namespace Rater.Pages ;
         {
             base.OnAppearing();
             _itemsList = _databaseContext.GetItemsForTopic(_topicId);
-            // MessagingCenter.Subscribe<MakeNewItemPage, Item>(this, "UpdateTopicItemsPage", (sender, item) => { _topic.Items.Add(item);});
             FillTheFront();
         }
         
         private void FillTheFront()
         {
+            var propertiesStackLayout = new StackLayout
+            {
+                Spacing = 5
+            };
+            
+            var newItemButton = new Button { Text = "Create New Item", BackgroundColor = Colors.Aqua};
+            newItemButton.Clicked += async (sender, e) =>
+            {
+                await Navigation.PushAsync(new MakeNewItemPage(_databaseContext, _topicId));
+            };
+            propertiesStackLayout.Children.Add(newItemButton);
+            
+            var addUserButton = new Button { Text = "Add new User", BackgroundColor = Colors.Aqua};
+            addUserButton.Clicked += async (sender, e) =>
+            {
+                await Navigation.PushAsync(new AddUserToTopicPage(_databaseContext, _topicId));
+            };
+            propertiesStackLayout.Children.Add(addUserButton);
+            
             var itemStackLayout = new StackLayout
             {
                 Spacing = 5
@@ -40,14 +58,8 @@ namespace Rater.Pages ;
             {
                 itemStackLayout.Add(ItemButton(item));
             }
-            
-            var newItemButton = new Button { Text = "Create New Item", BackgroundColor = Colors.Blue};
-            newItemButton.Clicked += async (sender, e) =>
-            {
-                await Navigation.PushAsync(new MakeNewItemPage(_databaseContext, _topicId));
-            };
-        
-            Content = new ScrollView { Content = new StackLayout {Margin = 20, Children = {newItemButton, itemStackLayout}}};
+
+            Content = new ScrollView { Content = new StackLayout {Margin = 20, Children = {propertiesStackLayout, itemStackLayout}}};
         }
         
         private Button ItemButton(Item item)

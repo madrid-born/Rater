@@ -51,7 +51,7 @@ namespace Rater.Pages ;
             
                 Functions.AuthorizeUser(user);
             
-                Application.Current.MainPage = new NavigationPage(new TopicsPage(_databaseContext));
+                Application.Current.MainPage = new NavigationPage(new MainPage(_databaseContext));
             }
             catch (Exception exception)
             {

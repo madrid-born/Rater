@@ -11,5 +11,6 @@ namespace Rater.Pages ;
         public HomeTabbedPage()
         {
             InitializeComponent();
+            
         }
     }

@@ -45,10 +45,15 @@ namespace Rater.Models ;
             return Functions.DeserializeStringList(MembersJson);
         }
 
-        public void AddMember(string username)
+        public void AddMember(DatabaseContext databaseContext, string username)
         {
             var members = Members();
             members.Add(username);
             MembersJson = Functions.SerializeStringList(members);
+            foreach (var item in ItemsId().Select(databaseContext.GetItemById))
+            {
+                item.AddUser(username, Attributes());
+                databaseContext.UpdateItem(item);
+            }
         }
     }

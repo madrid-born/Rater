@@ -79,8 +79,18 @@ namespace Rater.Models ;
             MeanValue = MeanValueSum / parentTopic.Members().Count(person => meanValues[person] != 0);
         }
         
-        public void AddUser(string username)
+        public void AddUser(string username, List<string> attributes)
         {
-            // TODO : make later
+            var meanValues = MeanValues();
+            meanValues.Add(username, 0);
+            var values = Values();
+            var dic = new Dictionary<int, int>();
+            for (var index = 0; index < attributes.Count; index++)
+            {
+                dic.Add(index ,0);
+            }
+            values.Add(username, dic);
+            ValuesJson = Functions.SerializeValues(values);
+            MeanValuesJson = Functions.SerializeMeanValues(meanValues);
         }
     }

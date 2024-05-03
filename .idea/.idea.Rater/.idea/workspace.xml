@@ -10,11 +10,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e629fd5-14b4-4829-bc44-9c9b517f8722" name="Changes" comment="make app working">
+    <list default="true" id="2e629fd5-14b4-4829-bc44-9c9b517f8722" name="Changes" comment="add migration">
+      <change afterPath="$PROJECT_DIR$/Rater/Pages/AddUserToTopicPage.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rater/Pages/AddUserToTopicPage.xaml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rater/Pages/CheckInvitesPage.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rater/Pages/CheckInvitesPage.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rater/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rater/Models/Item.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Models/Item.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rater/Pages/ItemPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/ItemPage.xaml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rater/Pages/RateItemPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/RateItemPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Models/Topic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Models/Topic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Models/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Pages/HomeTabbedPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/HomeTabbedPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Pages/LoginPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/LoginPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Pages/RegisterPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/RegisterPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Pages/TopicItemsPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/TopicPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Pages/TopicItemsPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/TopicPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Pages/TopicsPage.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/MainPage.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Pages/TopicsPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/MainPage.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +39,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/7641a1a0695522e81971758464776ba68659afdcd53575f6917f7593181d9345/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Coding  Projects/My Projects/C#/MAUI/Rater/Rater/Methods/DatabaseContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Coding  Projects/My Projects/C#/MAUI/Rater/Rater/Methods/DatabaseContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Coding  Projects/My Projects/C#/MAUI/Rater/Rater/Models/Item.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
     <ignored-facets>
@@ -70,7 +82,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="UWP.Rater">
+  <component name="RunManager" selected="Xamarin.Android.Rater">
     <configuration name="Rater" type="UwpProject" factoryName="UWP">
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Rater/Rater.csproj" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -111,7 +123,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1714588429600</updated>
-      <workItem from="1714588430986" duration="26403000" />
+      <workItem from="1714588430986" duration="35639000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -169,7 +181,31 @@
       <option name="project" value="LOCAL" />
       <updated>1714678488581</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="completing backend">
+      <option name="closed" value="true" />
+      <created>1714683533462</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1714683533462</updated>
+    </task>
+    <task id="LOCAL-00009" summary="make code cleaner">
+      <option name="closed" value="true" />
+      <created>1714736303219</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1714736303219</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add migration">
+      <option name="closed" value="true" />
+      <created>1714736332792</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1714736332792</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +220,9 @@
     <MESSAGE value="commit" />
     <MESSAGE value="adjust first pages" />
     <MESSAGE value="make app working" />
-    <option name="LAST_COMMIT_MESSAGE" value="make app working" />
+    <MESSAGE value="completing backend" />
+    <MESSAGE value="make code cleaner" />
+    <MESSAGE value="add migration" />
+    <option name="LAST_COMMIT_MESSAGE" value="add migration" />
   </component>
 </project>

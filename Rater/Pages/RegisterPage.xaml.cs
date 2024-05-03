@@ -66,7 +66,7 @@ namespace Rater.Pages ;
                 Functions.AuthorizeUser(user);
                 await DisplayAlert("s","Registered Successfully", "s");
                 
-                Application.Current.MainPage = new NavigationPage(new TopicsPage(_databaseContext));
+                Application.Current.MainPage = new NavigationPage(new MainPage(_databaseContext));
             }
             catch (Exception exception)
             {

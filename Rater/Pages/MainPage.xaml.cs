@@ -8,12 +8,12 @@ using Rater.Models;
 
 namespace Rater.Pages ;
 
-    public partial class TopicsPage : ContentPage
+    public partial class MainPage : ContentPage
     {
         private readonly DatabaseContext _databaseContext;
         private List<Topic> _topicsList ;
         
-        public TopicsPage(DatabaseContext dbContext)
+        public MainPage(DatabaseContext dbContext)
         {
             InitializeComponent();
             _databaseContext = dbContext;
@@ -28,6 +28,25 @@ namespace Rater.Pages ;
         
         private void FillTheFront()
         {
+            var propertiesStackLayout = new StackLayout
+            {
+                Spacing = 5
+            };
+            
+            var checkInvitesButton = new Button { Text = "Check your invites" ,BackgroundColor = Colors.Aqua};
+            checkInvitesButton.Clicked += async (sender, e) =>
+            {
+                await Navigation.PushAsync(new CheckInvitesPage(_databaseContext));
+            };
+            propertiesStackLayout.Children.Add(checkInvitesButton);
+
+            var newTopicButton = new Button { Text = "Create New Topic" ,BackgroundColor = Colors.Aqua};
+            newTopicButton.Clicked += async (sender, e) =>
+            {
+                await Navigation.PushAsync(new MakeNewTopicPage(_databaseContext));
+            };
+            propertiesStackLayout.Children.Add(newTopicButton);
+            
             var topicStackLayout = new StackLayout
             {
                 Spacing = 5
@@ -38,13 +57,9 @@ namespace Rater.Pages ;
                 topicStackLayout.Add(TopicButton(topic));
             }
             
-            var newTopicButton = new Button { Text = "Create New Topic" ,BackgroundColor = Colors.Aqua};
-            newTopicButton.Clicked += async (sender, e) =>
-            {
-                await Navigation.PushAsync(new MakeNewTopicPage(_databaseContext));
-            };
             
-            Content = new ScrollView { Content = new StackLayout {Margin = 20, Children = {newTopicButton, topicStackLayout}}};
+            
+            Content = new ScrollView { Content = new StackLayout {Margin = 20, Children = {propertiesStackLayout, topicStackLayout}}};
         }
         
         private Button TopicButton(Topic topic)
@@ -57,7 +72,7 @@ namespace Rater.Pages ;
             
             button.Clicked += async (sender, e) =>
             {
-                await Navigation.PushAsync(new TopicItemsPage(_databaseContext, topic.Id));
+                await Navigation.PushAsync(new TopicPage(_databaseContext, topic.Id));
             };
             
             return button;

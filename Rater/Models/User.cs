@@ -39,10 +39,26 @@ namespace Rater.Models ;
 
         public void InviteToTopic(int topicId)
         {
-            var topics = TopicsInvited();
-            topics.Add(topicId);
-            InvitedTopicsIdJson = Functions.SerializeIntList(topics);
+            var invitedList = TopicsInvited();
+            invitedList.Add(topicId);
+            InvitedTopicsIdJson = Functions.SerializeIntList(invitedList);
         }
-        
+
+        public void AcceptInvite(int topicId)
+        {
+            var invitedList = TopicsInvited();
+            var includedList = TopicsIncluded();
+            invitedList.Remove(topicId);
+            includedList.Add(topicId);
+            InvitedTopicsIdJson = Functions.SerializeIntList(invitedList);
+            TopicsIdIncludedJson = Functions.SerializeIntList(includedList);
+        }
+     
+        public void DeclineInvite(int topicId)
+        {
+            var invitedList = TopicsInvited();
+            invitedList.Remove(topicId);
+            InvitedTopicsIdJson = Functions.SerializeIntList(invitedList);
+        }
     }
     
