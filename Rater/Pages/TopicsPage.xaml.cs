@@ -23,8 +23,6 @@ namespace Rater.Pages ;
         {
             base.OnAppearing();
             _topicsList = _databaseContext.GetTopicsForUser();
-            // MessagingCenter.Subscribe<MakeNewTopicPage, Topic>(this, "UpdateTopicsPage",
-            //     (sender, topic) => { _topicsList.Add(topic);});
             FillTheFront();
         }
         

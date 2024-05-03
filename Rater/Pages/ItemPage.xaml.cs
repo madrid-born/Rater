@@ -39,9 +39,9 @@ namespace Rater.Pages ;
             sl.Children.Add(CreateHsl("Total Mean Value", _item.MeanValue.ToString()));
             foreach (var person in _parentTopic.Members())
             {
-                sl.Children.Add(CreateHsl(person, Functions.DeserializeMeanValues(_item.MeanValuesJson)[person].ToString()));
+                sl.Children.Add(CreateHsl(person, _item.MeanValues()[person].ToString()));
             }
-            if (Functions.DeserializeMeanValues(_item.MeanValuesJson)[Functions.GetUsername()] == 0)
+            if (_item.MeanValues()[Functions.GetUsername()] == 0)
             {
                 sl.Children.Add(CreateRateButton());
             }
@@ -66,9 +66,9 @@ namespace Rater.Pages ;
         
         private Grid CreateGrid()
         {
-            var attributes = Functions.DeserializeStringList(_parentTopic.AttributesJson);
-            var members = Functions.DeserializeStringList(_parentTopic.MembersJson);
-            var values = Functions.DeserializeValues(_item.ValuesJson);
+            var attributes = _parentTopic.Attributes();
+            var members = _parentTopic.Members();
+            var values = _item.Values();
             var table = new Grid 
             {
                 ColumnSpacing = 10

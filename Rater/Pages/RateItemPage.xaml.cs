@@ -48,7 +48,8 @@ namespace Rater.Pages ;
             };
             button.Clicked += (sender, e) =>
             {
-                UpdateItem();
+                _item.SetValues(Functions.GetUsername(), _userValues, _parentTopic);
+                _databaseContext.UpdateItem(_item);
                 Navigation.PopAsync();
             };
             sl.Add(button);
@@ -95,37 +96,5 @@ namespace Rater.Pages ;
 
             var vsl = new VerticalStackLayout{Children = { attributeLabel, table }};
             return vsl;
-        }
-        
-        private void UpdateItem()
-        {
-            try
-            {
-                var user = Functions.GetUsername();
-                var values = Functions.DeserializeValues(_item.ValuesJson);
-                var meanValues = Functions.DeserializeMeanValues(_item.MeanValuesJson);
-                values[user] = _userValues;
-                double sum = 0;
-                var count = 0;
-                var list = _parentTopic.Attributes();
-                for (var index = 0; index < list.Count; index++)
-                {
-                    if (values[user][index] == 0) continue;
-                    count++;
-                    sum += values[user][index];
-                }
-                sum /= count;
-                meanValues[user] = sum;
-                _item.ValuesJson = Functions.SerializeValues(values);
-                _item.MeanValuesJson = Functions.SerializeMeanValues(meanValues);
-                _item.MeanValueSum += sum;
-                _item.MeanValue = _item.MeanValueSum / _parentTopic.Members().Count(person => meanValues[person] != 0);
-                _databaseContext.UpdateItem(_item);
-            }
-            catch (Exception e)
-            {
-                DisplayAlert("sss", e.Message, "ds");
-            }
-            
         }
     }

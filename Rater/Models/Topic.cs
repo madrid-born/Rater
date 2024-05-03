@@ -27,14 +27,28 @@ namespace Rater.Models ;
         {
             return Functions.DeserializeStringList(AttributesJson);
         }
-        
+
         public List<int> ItemsId()
         {
             return Functions.DeserializeIntList(ItemsIdJson);
+        }
+
+        public void AddItemToTopic(int itemId)
+        {
+            var items = ItemsId();
+            items.Add(itemId);
+            ItemsIdJson = Functions.SerializeIntList(items);
         }
         
         public List<string> Members()
         {
             return Functions.DeserializeStringList(MembersJson);
-        }    
+        }
+
+        public void AddMember(string username)
+        {
+            var members = Members();
+            members.Add(username);
+            MembersJson = Functions.SerializeStringList(members);
+        }
     }

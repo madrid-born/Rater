@@ -5,9 +5,6 @@ namespace Rater.Methods ;
 
     public static class Functions
     {
-        
-        
-        
         public static void AuthorizeUser(User user)
         {
             Preferences.Set("Username",user.Name);
@@ -17,42 +14,7 @@ namespace Rater.Methods ;
         {
             return Preferences.Get("Username", "");
         }
-        
-        // Database Methods
-        
-        // public static List<string> UsernamesInDatabase()
-        // {
-        //     var result = new List<string>();
-        //     return result;
-        // }
-        //
-        // public static void AddUserToDatabase(Person person)
-        // {
-        //     
-        // }
-        //
-        // public static bool CheckUSerInDatabase(Person person)
-        // {
-        //     return true;
-        // }
-        //
-        // public static List<Topic> GetUserTopics()
-        // {
-        //     var username = GetUsername();
-        //     return RDG.TopicListGeneratorTemp(10);
-        // }
-        //
-        // public static void AddTopic(Topic topic)
-        // {
-        //     
-        // }
-        //
-        // public static void AddItem(Item item)
-        // {
-        //     
-        // }
-        
-        
+
         // Serialize and Deserialize Types 
         public static string SerializeMeanValues(Dictionary<string, double> dictionary)
         {

@@ -17,17 +17,32 @@ namespace Rater.Models ;
         public string Password { get; set; }
         
         public string TopicsIdIncludedJson { get; set; }
+        
+        public string InvitedTopicsIdJson { get; set; }
 
-        public IEnumerable<int> TopicsIncluded()
+        public List<int> TopicsIncluded()
         {
             return Functions.DeserializeIntList(TopicsIdIncludedJson);
         }
-
+        
         public void AddToTopics(int topicId)
         {
-            var topics = Functions.DeserializeIntList(TopicsIdIncludedJson);
+            var topics = TopicsIncluded();
             topics.Add(topicId);
             TopicsIdIncludedJson = Functions.SerializeIntList(topics);
         }
+
+        public List<int> TopicsInvited()
+        {
+            return Functions.DeserializeIntList(InvitedTopicsIdJson);
+        }
+
+        public void InviteToTopic(int topicId)
+        {
+            var topics = TopicsInvited();
+            topics.Add(topicId);
+            InvitedTopicsIdJson = Functions.SerializeIntList(topics);
+        }
+        
     }
     

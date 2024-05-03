@@ -89,11 +89,8 @@ namespace Rater.Pages ;
                     var topic = new Topic {Name = name, OwnersName = ownersName, Description = description, AttributesJson = Functions.SerializeStringList(attributes), MembersJson = Functions.SerializeStringList(new List<string>{ownersName})};
                     _databaseContext.AddTopic(topic);
                     var user = _databaseContext.GetUserByName(ownersName);
-                    var userTopics = Functions.DeserializeIntList(user.TopicsIdIncludedJson);
-                    userTopics.Add(topic.Id);
-                    user.TopicsIdIncludedJson = Functions.SerializeIntList(userTopics); 
+                    user.AddToTopics(topic.Id);
                     _databaseContext.UpdateUser(user);
-                    // MessagingCenter.Send(this, "UpdateTopicsPage", topic);
                     await Navigation.PopAsync();
 
                 }
