@@ -16,9 +16,8 @@ namespace Rater.Pages.Topics_Pages ;
         public UserTopics(DatabaseContext dbContext)
         {
             InitializeComponent();
-            _topicsList = _databaseContext.GetTopicsForUser();
             _databaseContext = dbContext;
-
+            _topicsList = _databaseContext.GetTopicsForUser();
         }
         
         protected override void OnAppearing()
@@ -40,8 +39,6 @@ namespace Rater.Pages.Topics_Pages ;
             {
                 sl.Add(TopicButton(topic));
             }
-            
-            
             
             Content = new ScrollView { Content = sl};
         }

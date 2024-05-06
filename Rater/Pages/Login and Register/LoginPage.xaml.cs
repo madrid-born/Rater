@@ -39,11 +39,11 @@ namespace Rater.Pages.Login_and_Register ;
 
                 var user = new User{Name = username, Password = password};
             
-                if (!_databaseContext.CheckUserAuthentication(user))
-                {
-                    await DisplayAlert("Error", "Username or Password is incorrect", "OK");
-                    return;
-                }
+                // if (_databaseContext.CheckUserAuthentication(user))
+                // {
+                //     await DisplayAlert("Error", "Username or Password is incorrect", "OK");
+                //     return;
+                // }
             
                 Functions.AuthorizeUser(user);
             

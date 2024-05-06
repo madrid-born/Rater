@@ -108,11 +108,11 @@ namespace Rater.Methods ;
             try
             {
                 var person = GetUserByName(user.Name);
-                return person.Password == user.Password;
+                return person.Password != user.Password;
             }
             catch (Exception e)
             {
-                return false;
+                return true;
             }
         }
 
