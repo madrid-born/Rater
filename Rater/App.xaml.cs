@@ -1,4 +1,5 @@
 ﻿using Rater.Pages;
+using Rater.Pages.Login_and_Register;
 
 namespace Rater ;
 

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Rater.Methods;
 using Rater.Pages;
+using Rater.Pages.Login_and_Register;
 
 namespace Rater ;
 

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Rater.Pages ;
+﻿namespace Rater.Pages.User_Properties ;
 
     public partial class ProfilePage : ContentPage
     {

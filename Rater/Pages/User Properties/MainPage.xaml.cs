@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Rater.Methods;
+﻿using Rater.Methods;
 using Rater.Models;
+using Rater.Pages.Topics_Pages;
 
-namespace Rater.Pages ;
+namespace Rater.Pages.User_Properties ;
 
     public partial class MainPage : ContentPage
     {

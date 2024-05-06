@@ -4,7 +4,8 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
             xmlns:mainPages="clr-namespace:Rater.Pages"
-            x:Class="Rater.Pages.HomeTabbedPage"
+            xmlns:userProperties="clr-namespace:Rater.Pages.User_Properties"
+            x:Class="Rater.Pages.User_Properties.HomeTabbedPage"
             android:TabbedPage.ToolbarPlacement="Bottom"
             SelectedTabColor="#00C569"
             UnselectedTabColor="White"
@@ -12,5 +13,5 @@
             BackgroundColor ="White">
     
     <!-- <mainPages:TopicsPage Title="TopicsPage" IconImageSource="NothingYet.svg" /> -->
-    <mainPages:ProfilePage Title="ProfilePage" IconImageSource="NothingYet.svg"/>
+    <!-- <userProperties:ProfilePage Title="ProfilePage" IconImageSource="NothingYet.svg"/> -->
 </TabbedPage>
