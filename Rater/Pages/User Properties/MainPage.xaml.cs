@@ -24,7 +24,7 @@ namespace Rater.Pages.User_Properties ;
         
         private void FillTheFront()
         {
-            var propertiesStackLayout = new StackLayout
+            var sl = new StackLayout
             {
                 Spacing = 5
             };
@@ -34,43 +34,22 @@ namespace Rater.Pages.User_Properties ;
             {
                 await Navigation.PushAsync(new CheckInvitesPage(_databaseContext));
             };
-            propertiesStackLayout.Children.Add(checkInvitesButton);
+            sl.Children.Add(checkInvitesButton);
 
             var newTopicButton = new Button { Text = "Create New Topic" ,BackgroundColor = Colors.Aqua};
             newTopicButton.Clicked += async (sender, e) =>
             {
                 await Navigation.PushAsync(new MakeNewTopicPage(_databaseContext));
             };
-            propertiesStackLayout.Children.Add(newTopicButton);
+            sl.Children.Add(newTopicButton);
             
-            var topicStackLayout = new StackLayout
+            var topicsListButton = new Button { Text = "Your Topics" ,BackgroundColor = Colors.Aqua};
+            topicsListButton.Clicked += async (sender, e) =>
             {
-                Spacing = 5
+                await Navigation.PushAsync(new UserTopics(_databaseContext));
             };
-        
-            foreach (var topic in _topicsList)
-            {
-                topicStackLayout.Add(TopicButton(topic));
-            }
-            
-            
-            
-            Content = new ScrollView { Content = new StackLayout {Margin = 20, Children = {propertiesStackLayout, topicStackLayout}}};
-        }
-        
-        private Button TopicButton(Topic topic)
-        {
-            var button = new Button
-            {
-                Text = topic.Name,
-                BackgroundColor = Colors.Red
-            };
-            
-            button.Clicked += async (sender, e) =>
-            {
-                await Navigation.PushAsync(new TopicPage(_databaseContext, topic.Id));
-            };
-            
-            return button;
+            sl.Children.Add(topicsListButton);
+
+            Content = new ScrollView { Content = sl };
         }
     }

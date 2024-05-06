@@ -15,8 +15,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e629fd5-14b4-4829-bc44-9c9b517f8722" name="Changes" comment="">
+    <list default="true" id="2e629fd5-14b4-4829-bc44-9c9b517f8722" name="Changes" comment="Cleaner folders">
+      <change afterPath="$PROJECT_DIR$/Rater/Pages/Topics Pages/UserTopics.xaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rater/Pages/Topics Pages/UserTopics.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rater/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Pages/User Properties/MainPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/User Properties/MainPage.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +118,7 @@
       <updated>1714588429600</updated>
       <workItem from="1714588430986" duration="39360000" />
       <workItem from="1714820129809" duration="68000" />
+      <workItem from="1714991369668" duration="2853000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -212,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714820188302</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Cleaner folders">
+      <option name="closed" value="true" />
+      <created>1714992754804</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1714992754804</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,6 +244,7 @@
     <MESSAGE value="add migration" />
     <MESSAGE value="invite to topic" />
     <MESSAGE value="connection string changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="connection string changed" />
+    <MESSAGE value="Cleaner folders" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaner folders" />
   </component>
 </project>
