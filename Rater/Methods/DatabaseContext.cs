@@ -21,7 +21,7 @@ namespace Rater.Methods ;
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            const string connString = "Connection string";
+            const string connString = "Server=158.58.187.131\\MSSQLSERVER2022;Database=RaterDataBase;User ID=alireza;Password=15iX#6to0;TrustServerCertificate=True;Encrypt=False";
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(connString);
