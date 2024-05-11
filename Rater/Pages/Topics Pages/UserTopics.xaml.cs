@@ -32,7 +32,7 @@ namespace Rater.Pages.Topics_Pages ;
 
             var sl = new StackLayout
             {
-                Spacing = 5
+                Spacing = 20, Margin = 20
             };
         
             foreach (var topic in _topicsList)
@@ -48,7 +48,11 @@ namespace Rater.Pages.Topics_Pages ;
             var button = new Button
             {
                 Text = topic.Name,
-                BackgroundColor = Colors.Red
+                BackgroundColor = Colors.Yellow ,
+                MinimumHeightRequest = 50 ,
+                TextColor = Colors.SaddleBrown ,
+                FontSize = 30 ,
+                CornerRadius = 25 
             };
             
             button.Clicked += async (sender, e) =>

@@ -40,7 +40,7 @@ namespace Rater.Pages.User_Properties ;
             var nameLabel = new Label { Text = $"Name : {topic.Name}" ,TextColor= Colors.DarkSlateGray,  FontSize=20};
             var ownersNameLabel = new Label { Text = $"Owner : {topic.OwnersName}" ,TextColor= Colors.DimGray,  FontSize=20};
 
-            var acceptButton = new Button { Text = "Accept", BackgroundColor = Colors.Green, TextColor= Colors.White, FontSize=25,  HorizontalOptions= LayoutOptions.FillAndExpand};
+            var acceptButton = new Button { Text = "Accept", BackgroundColor = Colors.Green, TextColor= Colors.White, FontSize=25,  HorizontalOptions= LayoutOptions.Fill};
             acceptButton.Clicked += async (sender, args) =>
             {
                 user.AcceptInvite(topicId);
@@ -49,7 +49,7 @@ namespace Rater.Pages.User_Properties ;
                 _databaseContext.UpdateTopic(topic);
                 await DisplayAlert("Message", "Accepted Successfully", "OK");
             };
-            var declineButton = new Button { Text = "Decline", BackgroundColor = Colors.Red, TextColor= Colors.White, FontSize=25,  HorizontalOptions= LayoutOptions.FillAndExpand};
+            var declineButton = new Button { Text = "Decline", BackgroundColor = Colors.Red, TextColor= Colors.White, FontSize=25,  HorizontalOptions= LayoutOptions.Fill};
             declineButton.Clicked += async (sender, args) =>
             {
                 user.DeclineInvite(topicId);
@@ -65,7 +65,7 @@ namespace Rater.Pages.User_Properties ;
             var frame = new Frame
             {
                 BackgroundColor = Colors.BlanchedAlmond,
-                Content = new VerticalStackLayout { BackgroundColor = Colors.Wheat,Children = { nameLabel, ownersNameLabel, hsl }}
+                Content = new VerticalStackLayout {Children = { nameLabel, ownersNameLabel, hsl }}
             };
             
             return frame;
