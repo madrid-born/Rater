@@ -16,9 +16,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e629fd5-14b4-4829-bc44-9c9b517f8722" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Rater/Resources/xml/network_security_config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rater/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rater/Methods/DatabaseContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Methods/DatabaseContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rater/Pages/Login and Register/LoginPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/Login and Register/LoginPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Platforms/Android/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Platforms/Android/AndroidManifest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +30,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/194db76c96184f90bed00173798e03984913ac3c2f41fca529b842ae1aa99b/SqlServerDbContextOptionsBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/7641a1a0695522e81971758464776ba68659afdcd53575f6917f7593181d9345/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/SourceGeneratedDocuments/5F046D4B4E3956A34E5C51E0/Microsoft.Maui.Controls.SourceGen/Microsoft.Maui.Controls.SourceGen.CodeBehindGenerator/Pages_AddUserToTopicPage.xaml.sg.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/Coding  Projects/My Projects/C#/MAUI/Rater/Rater/Methods/DatabaseContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Rater/Platforms/Android/MainActivity.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
     <ignored-facets>
@@ -74,7 +75,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="UWP.Rater">
+  <component name="RunManager" selected="Xamarin.Android.Rater">
     <configuration name="Rater" type="UwpProject" factoryName="UWP">
       <option name="PROJECT_PATH" value="$PROJECT_DIR$/Rater/Rater.csproj" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -119,6 +120,9 @@
       <workItem from="1714820129809" duration="68000" />
       <workItem from="1714991369668" duration="3224000" />
       <workItem from="1715029147783" duration="2994000" />
+      <workItem from="1715035431962" duration="1251000" />
+      <workItem from="1715234344668" duration="7520000" />
+      <workItem from="1715449132384" duration="2369000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -232,7 +236,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714995132416</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fix">
+      <option name="closed" value="true" />
+      <created>1715035647068</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1715035647068</updated>
+    </task>
+    <task id="LOCAL-00016" summary="s">
+      <option name="closed" value="true" />
+      <created>1715035662273</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1715035662273</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,6 +274,8 @@
     <MESSAGE value="connection string changed" />
     <MESSAGE value="Cleaner folders" />
     <MESSAGE value="user topics" />
-    <option name="LAST_COMMIT_MESSAGE" value="user topics" />
+    <MESSAGE value="fix" />
+    <MESSAGE value="s" />
+    <option name="LAST_COMMIT_MESSAGE" value="s" />
   </component>
 </project>
