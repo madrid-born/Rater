@@ -26,24 +26,24 @@ namespace Rater.Pages.User_Properties ;
         {
             var sl = new StackLayout
             {
-                Spacing = 5
+                Spacing = 20, Margin = 20
             };
             
-            var checkInvitesButton = new Button { Text = "Check your invites" ,BackgroundColor = Colors.Aqua};
+            var checkInvitesButton = new Button { Text = "Check your invites", BackgroundColor = Colors.Orange ,MinimumHeightRequest = 100 ,TextColor = Colors.SaddleBrown ,FontSize = 30 ,CornerRadius = 25 };
             checkInvitesButton.Clicked += async (sender, e) =>
             {
                 await Navigation.PushAsync(new CheckInvitesPage(_databaseContext));
             };
             sl.Children.Add(checkInvitesButton);
 
-            var newTopicButton = new Button { Text = "Create New Topic" ,BackgroundColor = Colors.Aqua};
+            var newTopicButton = new Button { Text = "Create New Topic" ,BackgroundColor = Colors.GreenYellow ,MinimumHeightRequest = 100 ,TextColor = Colors.SaddleBrown ,FontSize = 30 ,CornerRadius = 25 };
             newTopicButton.Clicked += async (sender, e) =>
             {
                 await Navigation.PushAsync(new MakeNewTopicPage(_databaseContext));
             };
             sl.Children.Add(newTopicButton);
             
-            var topicsListButton = new Button { Text = "Your Topics" ,BackgroundColor = Colors.Aqua};
+            var topicsListButton = new Button { Text = "Your Topics" ,BackgroundColor = Colors.Yellow ,MinimumHeightRequest = 100 ,TextColor = Colors.SaddleBrown ,FontSize = 30 ,CornerRadius = 25 };
             topicsListButton.Clicked += async (sender, e) =>
             {
                 await Navigation.PushAsync(new UserTopics(_databaseContext));
