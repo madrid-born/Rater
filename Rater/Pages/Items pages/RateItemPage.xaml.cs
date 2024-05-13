@@ -28,7 +28,7 @@ namespace Rater.Pages.Items_pages ;
 
         private void FillTheFront()
         {
-            var sl = new StackLayout { Margin = 20, Spacing = 5};
+            var sl = new StackLayout { Margin = 20, Spacing = 20};
 
             var list = _parentTopic.Attributes();
             for (var index = 0; index < list.Count; index++)
@@ -39,7 +39,10 @@ namespace Rater.Pages.Items_pages ;
             
             var button = new Button
             {
-                Text = "Proceed"
+                Text = "Proceed",
+                BackgroundColor = Colors.GreenYellow,
+                TextColor = Colors.SaddleBrown,
+                FontSize = 30
             };
             button.Clicked += (sender, e) =>
             {
@@ -47,18 +50,24 @@ namespace Rater.Pages.Items_pages ;
                 _databaseContext.UpdateItem(_item);
                 Navigation.PopAsync();
             };
-            sl.Add(button);
+            sl.Children.Add(button);
             
             Content = new ScrollView { Content = new ScrollView { Orientation = ScrollOrientation.Horizontal, Content = sl}};
         }
 
         private VerticalStackLayout CreateVsl(string attribute)
         {
-            var attributeLabel = new Label { Text = attribute };
+            var attributeLabel = new Label
+            {
+                Text = attribute,
+                TextColor = Colors.Black,
+                FontSize = 20
+            };
             
             var table = new Grid 
             {
-                ColumnSpacing = 5
+                ColumnSpacing = -15,
+                Padding = 10
             };
             table.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             table.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
@@ -68,7 +77,11 @@ namespace Rater.Pages.Items_pages ;
                 table.ColumnDefinitions.Add(new ColumnDefinition { Width = GridLength.Auto });
         
                 if (i >= 11) continue;
-                var numberLabel = new Label { Text = i.ToString()};
+                var numberLabel = new Label
+                {
+                    Text = i.ToString(),
+                    Margin = i==10 ? new Thickness(4, 0, 0, 0) : new Thickness(8, 0, 0, 0)
+                };
                 table.Children.Add(numberLabel);
                 table.SetRow(numberLabel, 0);
                 table.SetColumn(numberLabel, i);
@@ -89,7 +102,13 @@ namespace Rater.Pages.Items_pages ;
                 table.SetColumn(radioButton, i);
             }
 
-            var vsl = new VerticalStackLayout{Children = { attributeLabel, table }};
+            var vsl = new VerticalStackLayout
+            {
+                Spacing = 10,
+                BackgroundColor = Colors.DarkGray,
+                Padding = 10,
+                Children = { attributeLabel, table }
+            };
             return vsl;
         }
     }

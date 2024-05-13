@@ -27,19 +27,24 @@ namespace Rater.Pages.Items_pages ;
         
         private void FillTheFront()
         {
-            var sl = new StackLayout { Margin = 20, Spacing = 5};
+            var sl = new StackLayout { Margin = 20, Spacing = 20};
+
+            var vsl = new StackLayout { Spacing = 20, Padding = 20 , BackgroundColor= Colors.BlanchedAlmond};
             
-            sl.Children.Add(CreateHsl("Topic", _parentTopic.Name));
-            sl.Children.Add(CreateHsl("Name", _item.Name));
-            sl.Children.Add(CreateHsl("Total Mean Value", _item.MeanValue.ToString()));
+            vsl.Children.Add(CreateHsl("Topic", _parentTopic.Name));
+            vsl.Children.Add(CreateHsl("Name", _item.Name));
+            vsl.Children.Add(CreateHsl("Total Mean Value", _item.MeanValue.ToString()));
             foreach (var person in _parentTopic.Members())
             {
-                sl.Children.Add(CreateHsl(person, _item.MeanValues()[person].ToString()));
+                vsl.Children.Add(CreateHsl(person, _item.MeanValues()[person].ToString()));
             }
+            sl.Children.Add(vsl);
+            
             if (_item.MeanValues()[Functions.GetUsername()] == 0)
             {
                 sl.Children.Add(CreateRateButton());
             }
+            
             sl.Children.Add(new ScrollView { Orientation = ScrollOrientation.Horizontal, Content = CreateGrid()});
             
             Content = new ScrollView { Content = sl};
@@ -47,13 +52,14 @@ namespace Rater.Pages.Items_pages ;
         
         private HorizontalStackLayout CreateHsl(string constant, string value)
         {
-            var valueLabel = new Label
-            {
-                Text = value
-            };
             var layout = new HorizontalStackLayout
             {
-                Children = { new Label{Text = $"{constant} : "}, valueLabel}
+                Children = { new Label
+                {
+                    Text = $"{constant} : {value}",
+                    TextColor = Colors.Black,
+                    FontSize = 20
+                }}
             };
         
             return layout;
@@ -66,7 +72,11 @@ namespace Rater.Pages.Items_pages ;
             var values = _item.Values();
             var table = new Grid 
             {
-                ColumnSpacing = 10
+                Padding = 20,
+                RowSpacing = 10,
+                ColumnSpacing = 10,
+                BackgroundColor = Colors.BlanchedAlmond
+               
             };
             for (var i = 0; i < members.Count + 1; i++)
             {
@@ -76,11 +86,21 @@ namespace Rater.Pages.Items_pages ;
             var attributeColumn = new VerticalStackLayout();
             table.Children.Add(attributeColumn);
             table.SetColumn(attributeColumn, 0);
-            attributeColumn.Children.Add(new Label { Text = "Attributes", HorizontalTextAlignment = TextAlignment.Center });
+            attributeColumn.Children.Add(new Label
+            {
+                Text = "Attributes",
+                TextColor = Colors.Black,
+                HorizontalTextAlignment = TextAlignment.Center
+            });
 
             foreach (var attribute in attributes)
             {
-                attributeColumn.Children.Add(new Label { Text = attribute, HorizontalTextAlignment = TextAlignment.Center });
+                attributeColumn.Children.Add(new Label
+                {
+                    Text = attribute,
+                    TextColor = Colors.Black,
+                    HorizontalTextAlignment = TextAlignment.End
+                });
             }
         
             for (var i = 0; i < members.Count; i++)
@@ -88,10 +108,20 @@ namespace Rater.Pages.Items_pages ;
                 var personColumn = new VerticalStackLayout();
                 table.Children.Add(personColumn);
                 table.SetColumn(personColumn, i+1);
-                personColumn.Children.Add(new Label { Text = members[i], HorizontalTextAlignment = TextAlignment.Center });
+                personColumn.Children.Add(new Label
+                {
+                    Text = members[i],
+                    TextColor = Colors.Black,
+                    HorizontalTextAlignment = TextAlignment.Center
+                });
                 foreach (var attribute in attributes)
                 {
-                    personColumn.Children.Add(new Label { Text = values[members[i]][attributes.IndexOf(attribute)].ToString(), HorizontalTextAlignment = TextAlignment.Center });
+                    personColumn.Children.Add(new Label
+                    {
+                        Text = values[members[i]][attributes.IndexOf(attribute)].ToString(),
+                        TextColor = Colors.Black,
+                        HorizontalTextAlignment = TextAlignment.Center
+                    });
                 }
             }
         
@@ -102,7 +132,10 @@ namespace Rater.Pages.Items_pages ;
         {
             var addRateButton = new Button
             {
-                Text = "Add Your Rate"
+                Text = "Add Your Rate",
+                BackgroundColor = Colors.GreenYellow,
+                TextColor = Colors.SaddleBrown,
+                FontSize = 30
             };
             addRateButton.Clicked += async (sender, e) =>
             {

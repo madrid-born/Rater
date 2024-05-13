@@ -24,14 +24,26 @@ namespace Rater.Pages.Items_pages ;
         {
             var sl = new StackLayout
             {
-                Spacing = 10,
+                Spacing = 20,
                 Margin = 20
             };
             
-            var nameEntry = new Entry { Placeholder = "Name"};
+            var nameEntry = new Entry
+            {
+                Placeholder = "Name",
+                BackgroundColor = Colors.BlanchedAlmond,
+                TextColor = Colors.Black,
+                FontSize = 20
+            };
             sl.Children.Add(nameEntry);
         
-            var submitButton = new Button { Text = "Submit"};
+            var submitButton = new Button
+            {
+                Text = "Submit",
+                BackgroundColor = Colors.Orange,
+                TextColor = Colors.SaddleBrown,
+                FontSize = 20
+            };
             submitButton.Clicked += async (sender, e) =>
             {
                 var name = nameEntry.Text;
