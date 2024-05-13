@@ -72,11 +72,12 @@ namespace Rater.Models ;
                 sum += values[user][index];
             }
             sum /= count;
+            sum = Math.Round(sum, 2);
             meanValues[user] = sum;
             ValuesJson = Functions.SerializeValues(values);
             MeanValuesJson = Functions.SerializeMeanValues(meanValues);
             MeanValueSum += sum;
-            MeanValue = MeanValueSum / parentTopic.Members().Count(person => meanValues[person] != 0);
+            MeanValue = Math.Round(MeanValueSum / parentTopic.Members().Count(person => meanValues[person] != 0), 2);
         }
         
         public void AddUser(string username, List<string> attributes)

@@ -50,7 +50,7 @@ namespace Rater.Pages.Topics_Pages ;
             var label = new Label
             {
                 Text = "Attributes",
-                BackgroundColor = Colors.Black,
+                TextColor = Colors.Black,
                 HorizontalOptions = LayoutOptions.Center,
                 FontSize = 30
             };
