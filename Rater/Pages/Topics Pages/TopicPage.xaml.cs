@@ -28,17 +28,32 @@ namespace Rater.Pages.Topics_Pages ;
         {
             var propertiesStackLayout = new StackLayout
             {
-                Spacing = 5
+                Spacing = 20, Margin = 20
             };
             
-            var newItemButton = new Button { Text = "Create New Item", BackgroundColor = Colors.Aqua};
+            var newItemButton = new Button { 
+                Text = "Create New Item",
+                BackgroundColor = Colors.Yellow ,
+                MinimumHeightRequest = 100 ,
+                TextColor = Colors.SaddleBrown ,
+                FontSize = 30 ,
+                CornerRadius = 25 };
+            
             newItemButton.Clicked += async (sender, e) =>
             {
                 await Navigation.PushAsync(new MakeNewItemPage(_databaseContext, _topicId));
             };
             propertiesStackLayout.Children.Add(newItemButton);
             
-            var addUserButton = new Button { Text = "Add new User", BackgroundColor = Colors.Aqua};
+            var addUserButton = new Button
+            {
+                Text = "Add new User",
+                BackgroundColor = Colors.Orange ,
+                MinimumHeightRequest = 100 ,
+                TextColor = Colors.SaddleBrown ,
+                FontSize = 30 ,
+                CornerRadius = 25             
+            };
             addUserButton.Clicked += async (sender, e) =>
             {
                 await Navigation.PushAsync(new AddUserToTopicPage(_databaseContext, _topicId));
@@ -47,7 +62,7 @@ namespace Rater.Pages.Topics_Pages ;
             
             var itemStackLayout = new StackLayout
             {
-                Spacing = 5
+                Spacing = 10, Margin = 20
             };
         
             foreach (var item in _itemsList)
@@ -55,7 +70,7 @@ namespace Rater.Pages.Topics_Pages ;
                 itemStackLayout.Add(ItemButton(item));
             }
 
-            Content = new ScrollView { Content = new StackLayout {Margin = 20, Children = {propertiesStackLayout, itemStackLayout}}};
+            Content = new ScrollView { Content = new StackLayout { Children = {propertiesStackLayout, itemStackLayout}}};
         }
         
         private Button ItemButton(Item item)
@@ -63,7 +78,11 @@ namespace Rater.Pages.Topics_Pages ;
             var button = new Button
             {
                 Text = item.Name + "\t" +item.MeanValue,
-                BackgroundColor = Colors.Green
+                BackgroundColor = Colors.GreenYellow ,
+                MinimumHeightRequest = 50 ,
+                TextColor = Colors.SaddleBrown ,
+                FontSize = 30 ,
+                CornerRadius = 25 
             };
             
             button.Clicked += async (sender, e) =>

@@ -15,19 +15,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e629fd5-14b4-4829-bc44-9c9b517f8722" name="Changes" comment="CheckInvitesPage FrontEnd">
-      <change afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/rater.metadata.v7.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/rater.projects.v7.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/Rater/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/Rater/FileContentIndex/4d560261-ee7f-4702-9871-0a098fcfe591.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/Rater/v17/.futdcache.v2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/Rater/v17/.suo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Rater/Rater.csproj.user" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/workload-install.ps1" afterDir="false" />
+    <list default="true" id="2e629fd5-14b4-4829-bc44-9c9b517f8722" name="Changes" comment="FrontEnd">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rater/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rater.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Rater.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rater/Pages/Topics Pages/UserTopics.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/Topics Pages/UserTopics.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rater/Pages/Topics Pages/UserTopics.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/Topics Pages/UserTopics.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Pages/Topics Pages/MakeNewTopicPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/Topics Pages/MakeNewTopicPage.xaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Pages/Topics Pages/TopicPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/Topics Pages/TopicPage.xaml.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rater/Pages/User Properties/CheckInvitesPage.xaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Pages/User Properties/CheckInvitesPage.xaml.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +32,8 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/194db76c96184f90bed00173798e03984913ac3c2f41fca529b842ae1aa99b/SqlServerDbContextOptionsBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/7641a1a0695522e81971758464776ba68659afdcd53575f6917f7593181d9345/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Coding  Projects/My Projects/C#/MAUI/Rater/Rater/Methods/DatabaseContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Coding  Projects/My Projects/C#/MAUI/Rater/Rater/Methods/DatabaseContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Coding  Projects/My Projects/C#/MAUI/Rater/Rater/Pages/User Properties/CheckInvitesPage.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/Coding  Projects/My Projects/C#/MAUI/Rater/Rater/Pages/User Properties/MainPage.xaml.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Rater/Platforms/Android/MainActivity.cs" root0="SKIP_HIGHLIGHTING" />
@@ -134,7 +127,7 @@
       <workItem from="1715029147783" duration="2994000" />
       <workItem from="1715035431962" duration="1251000" />
       <workItem from="1715234344668" duration="7520000" />
-      <workItem from="1715449132384" duration="5794000" />
+      <workItem from="1715449132384" duration="10271000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -288,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715456507712</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="FrontEnd">
+      <option name="closed" value="true" />
+      <created>1715457057535</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1715457057535</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,6 +316,7 @@
     <MESSAGE value="android manifest" />
     <MESSAGE value="MainPage Frontend" />
     <MESSAGE value="CheckInvitesPage FrontEnd" />
-    <option name="LAST_COMMIT_MESSAGE" value="CheckInvitesPage FrontEnd" />
+    <MESSAGE value="FrontEnd" />
+    <option name="LAST_COMMIT_MESSAGE" value="FrontEnd" />
   </component>
 </project>

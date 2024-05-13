@@ -7,6 +7,7 @@ namespace Rater.Pages.Topics_Pages ;
     {
         private readonly DatabaseContext _databaseContext;
         private List<Entry> _entries = new ();
+        private int _attributeCounter = 1;
         
         public MakeNewTopicPage(DatabaseContext dbContext)
         {
@@ -24,31 +25,78 @@ namespace Rater.Pages.Topics_Pages ;
         {
             var sl = new StackLayout
             {
-                Spacing = 10,
+                Spacing = 20,
                 Margin = 20
             };
             
-            var nameEntry = new Entry { Placeholder = "Name"};
+            var nameEntry = new Entry
+            {
+                Placeholder = "Name",
+                BackgroundColor = Colors.BlanchedAlmond,
+                TextColor = Colors.Black,
+                FontSize = 20
+            };
             sl.Children.Add(nameEntry);
             
-            var descriptionEntry = new Entry { Placeholder = "Description"};
+            var descriptionEntry = new Entry
+            {
+                Placeholder = "Description",
+                BackgroundColor = Colors.BlanchedAlmond,
+                TextColor = Colors.Black,
+                FontSize = 20
+            };
             sl.Children.Add(descriptionEntry);
             
-            var label = new Label { Text = "Attributes" };
+            var label = new Label
+            {
+                Text = "Attributes",
+                HorizontalOptions = LayoutOptions.Center,
+                FontSize = 30
+            };
             sl.Children.Add(label);
             
             var attributesLayout = new StackLayout();
-            var addAttributesButton = new Button { Text = "Add Attributes" };
+            var addAttributesButton = new Button
+            {
+                Text = "Add Attribute",
+                BackgroundColor = Colors.GreenYellow,
+                TextColor = Colors.SaddleBrown,
+                FontSize = 20
+            };
             addAttributesButton.Clicked += (sender, e) =>
             {
-                var newAttributeEntry = new Entry{Text = ""};
+                _attributeCounter++;
+                var newAttributeEntry = new Entry
+                {
+                    Placeholder="Attribute " + _attributeCounter,
+                    BackgroundColor = Colors.CadetBlue,
+                    TextColor = Colors.Black,
+                    FontSize = 20
+                };
                 _entries.Add(newAttributeEntry);
                 attributesLayout.Children.Add(newAttributeEntry);
             };
+            
+            var newAttributeEntry = new Entry
+            {
+                Placeholder="Attribute 1",
+                BackgroundColor = Colors.CadetBlue,
+                TextColor = Colors.Black,
+                FontSize = 20
+            };
+            _entries.Add(newAttributeEntry);
+            attributesLayout.Children.Add(newAttributeEntry);
+            
             sl.Children.Add(addAttributesButton);
             sl.Children.Add(attributesLayout);
         
-            var submitButton = new Button { Text = "Submit"};
+            var submitButton = new Button
+            {
+                Text = "Submit",
+                BackgroundColor = Colors.Orange,
+                TextColor = Colors.SaddleBrown,
+                FontSize = 20
+            };
             submitButton.Clicked += async (sender, e) =>
             {
                 try

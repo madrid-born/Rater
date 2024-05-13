@@ -56,9 +56,11 @@ namespace Rater.Pages.User_Properties ;
                 _databaseContext.UpdateUser(user);
                 await DisplayAlert("Message", "Declined Successfully", "OK");
             };
-            var hsl = new HorizontalStackLayout
+            var hsl = new StackLayout
             {
                 Spacing = 10,
+                Orientation= StackOrientation.Horizontal,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
                 Children = { acceptButton, declineButton }
             };
 
