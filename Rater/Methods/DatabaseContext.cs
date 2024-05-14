@@ -142,5 +142,4 @@ namespace Rater.Methods ;
             var idList = Functions.DeserializeIntList(parentTopic.ItemsIdJson);
             return idList.Select(GetItemById).ToList();
         }
-        
     }
