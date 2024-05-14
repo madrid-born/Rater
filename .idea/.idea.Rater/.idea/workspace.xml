@@ -18,25 +18,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e629fd5-14b4-4829-bc44-9c9b517f8722" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.vs/Rater/FileContentIndex/cae66ae5-35cc-449a-a6b4-c63e09a7e2fe.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/Rater/FileContentIndex/e5d29b7d-537f-45d9-8604-6c935e5a2b60.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/Rater/FileContentIndex/e7b0bac9-9cfc-4578-a0e4-43aa1009c2cd.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/Rater/config/applicationhost.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Rater/Properties/PublishProfiles/MSIX-win10-x86.pubxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Rater/Properties/PublishProfiles/MSIX-win10-x861.pubxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Rater/Rater_TemporaryKey.pfx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/com.companyname.rater.aab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vs/Rater/FileContentIndex/3497cdd8-c089-47ff-83b6-1f44a7776174.vsidx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Rater/Platforms/Android/Resources/xml/nsc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Rater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Rater/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/rater.metadata.v7.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/rater.metadata.v7.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/rater.projects.v7.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/rater.projects.v7.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vs/Rater/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Rater/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Rater/FileContentIndex/4d560261-ee7f-4702-9871-0a098fcfe591.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Rater/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Rater/v17/.futdcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/Rater/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/Rater/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vs/Rater/FileContentIndex/e5d29b7d-537f-45d9-8604-6c935e5a2b60.vsidx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Rater/Methods/DatabaseContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Methods/DatabaseContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rater/Platforms/Windows/Package.appxmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Platforms/Windows/Package.appxmanifest" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rater/Rater.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Rater.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rater/Rater.csproj.user" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Rater.csproj.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Platforms/Android/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Rater/Platforms/Android/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rater/Platforms/Android/Resources/xml/network_security_config.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +39,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/194db76c96184f90bed00173798e03984913ac3c2f41fca529b842ae1aa99b/SqlServerDbContextOptionsBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/JetBrains/Shared/vAny/SourcesCache/7641a1a0695522e81971758464776ba68659afdcd53575f6917f7593181d9345/Dictionary.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Rater/Platforms/Android/MainActivity.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Rater/Platforms/Android/MainApplication.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Rater/Platforms/Android/MainApplication.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="InvalidFacetManager">
     <ignored-facets>
@@ -182,7 +171,7 @@
       <workItem from="1715035431962" duration="1251000" />
       <workItem from="1715234344668" duration="7520000" />
       <workItem from="1715449132384" duration="19472000" />
-      <workItem from="1715669197490" duration="6178000" />
+      <workItem from="1715669197490" duration="8506000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <option name="closed" value="true" />
@@ -376,7 +365,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715626046846</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Phase 1">
+      <option name="closed" value="true" />
+      <created>1715688894759</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1715688894759</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,6 +405,7 @@
     <MESSAGE value="Completing Frontend" />
     <MESSAGE value="Complete frontend" />
     <MESSAGE value="final backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="final backend" />
+    <MESSAGE value="Phase 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Phase 1" />
   </component>
 </project>
